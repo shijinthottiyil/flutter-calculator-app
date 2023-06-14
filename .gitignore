@@ -31,6 +31,11 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+.metadata
+analysis_options.yaml
+my_calculator.iml
+pubspec.lock
+
 
 # Symbolication related
 app.*.symbols
@@ -42,3 +47,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/android
+/.dart_tool
+/.idea
+/ios
+/linux
+/macos
+/web
+/windows
