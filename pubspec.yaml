@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.3.6
+  intl: ^0.18.1
   math_expressions: ^2.4.0
   sizer: ^2.0.15
 

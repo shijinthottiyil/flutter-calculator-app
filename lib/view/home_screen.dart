@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 import 'package:math_expressions/math_expressions.dart';
 import 'package:my_calculator/view/utils/colors.dart';
@@ -226,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 );
                                 setState(() {
                                   oper.text = "÷";
-                                  num1.text = "${num1.text}/";
+                                  num1.text = "(${num1.text})/";
                                 });
                               },
                               child: ControlContainer(
@@ -279,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 );
                                 setState(() {
                                   oper.text = "x";
-                                  num1.text = "${num1.text}*";
+                                  num1.text = "(${num1.text})*";
                                 });
                               },
                               child: ControlContainer(
@@ -457,7 +458,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  answerText.text = calc(num1.text);
+                                  String result = calc(num1.text);
+                                  num number = num.parse(result);
+                                  String formattedNumber =
+                                      NumberFormat('#,##0.00').format(number);
+                                  answerText.text = formattedNumber;
                                 });
                               },
                               onDoubleTap: () async {
@@ -465,8 +470,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                   AssetSource('iphone_sound_trim.mp3'),
                                   volume: 0.2,
                                 );
+                                // num number = num.parse(num1.text);
+                                // String formattedNumber =
+                                //     NumberFormat('#,##0.00').format(number);
+                                // setState(() {
+                                //   num1.text = formattedNumber;
+                                //   answerText.clear();
+                                // });
                                 setState(() {
-                                  num1.text = answerText.text;
+                                  // num1.text = answerText.text;
+                                  String original =
+                                      answerText.text.replaceAll(',', '');
+                                  num1.text = original;
                                   answerText.clear();
                                 });
                               },
