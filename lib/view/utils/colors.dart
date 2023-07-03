@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-// final toggleProvider =
-//     ChangeNotifierProvider<CustomColors>((ref) => CustomColors());
 
 class CustomColors {
   // bool isLight = true;

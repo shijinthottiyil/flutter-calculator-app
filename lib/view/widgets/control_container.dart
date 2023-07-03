@@ -20,15 +20,6 @@ class ControlContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: buttonColor,
         borderRadius: BorderRadius.circular(3.w),
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: Colors.black.withOpacity(0.5),
-        //     spreadRadius: 0,
-        //     blurRadius: 3,
-        //     offset: Offset(2,
-        //         3), // changes the shadow direction horizontally and vertically
-        //   ),
-        // ],
       ),
       child: Center(
           child: Text(
